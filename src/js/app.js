@@ -5,11 +5,13 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 
+
 import { Router, Route, browserHistory ,Link} from 'react-router';
 
 import css from '../css/main.css'
 import wait from './wait.js'
 import hello from './hello.js'
+
 
 var routes = (
     <Router history={browserHistory}>
