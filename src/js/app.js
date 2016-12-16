@@ -6,17 +6,21 @@ import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 
 
-import { Router, Route, browserHistory ,Link} from 'react-router';
+import { Router, Route, browserHistory ,Link,getComponent} from 'react-router';
 
 import css from '../css/main.css'
 import wait from './wait.js'
-import hello from './hello.js'
 
+const SpuLibManage = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('./hello'))
+    })
+}
 
 var routes = (
     <Router history={browserHistory}>
         <Route path="/" component={wait}/>
-        <Route path="/hello" component={hello}/>
+        <Route path="/hello" getComponent={SpuLibManage}/>
     </Router>
 );
 

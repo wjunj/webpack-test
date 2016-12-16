@@ -18,7 +18,7 @@ class Hello extends React.Component {
     }
 }
 
-export default Hello
+module.exports = Hello;
 
 
 //子节点通过props获取父节点数据 父节点通过ref控制子节点
