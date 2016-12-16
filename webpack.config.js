@@ -12,7 +12,8 @@ var config = {
 	//],
 	{
 		//业务代码
-		main: path.resolve(__dirname, 'src/js/app.js'), //第三方库
+		app: path.resolve(__dirname, 'src/js/app.js'), //第三方库
+		hello: path.resolve(__dirname, 'src/js/hello.js'), //第三方库
 		libs: ["react","react-dom"]
 	},
 	output: {
@@ -65,11 +66,13 @@ var config = {
 			}
 		}),
 		new HtmlWebpackPlugin({
-			template:"src/index.html"
+			template: 'src/index.html',
+			chunks:['libs','app']
 		}),
         new CleanPlugin(['dist']),// 清空dist文件夹
         new webpack.optimize.CommonsChunkPlugin({
-			name: 'libs' // 将公共模块提取，生成名为`vendors`的chunk
+			name: 'libs', // 将公共模块提取，生成名为`vendors`的chunk
+			minChunks:3
         }),
 		new ExtractTextPlugin( "css/[name].[hash:6].css"), //提取CSS行内样式，转化为link引入
         //new webpack.optimize.UglifyJsPlugin({ // js压缩 生产环境再打开，不然慢
