@@ -14,7 +14,7 @@ import wait from './wait.js'
 const SpuLibManage = (location, cb) => {
     require.ensure([], require => {
         cb(null, require('./hello'))
-    })
+    },'hello')
 }
 
 var routes = (

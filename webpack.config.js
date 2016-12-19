@@ -13,13 +13,13 @@ var config = {
 	{
 		//业务代码
 		app: path.resolve(__dirname, 'src/js/app.js'), //第三方库
-		hello: path.resolve(__dirname, 'src/js/hello.js'), //第三方库
 		libs: ["react","react-dom"]
 	},
 	output: {
 		path: __dirname + '/dist',
 		publicPath: '/',
-		filename: 'js/[name].[hash:6].js'
+		filename: 'js/[name].[hash:6].js',
+		chunkFilename: 'js/[name].[hash:6].js'
 	},
 	resolve: {
 		root: [],
