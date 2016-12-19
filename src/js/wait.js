@@ -12,7 +12,7 @@ class WaitList extends React.Component{
     }
     renderComment({content,createTime,isAide,price,hasAppend}){
         return (
-            <a href="">
+            <a href="./hello">
                 <div className="expertMobile-answer-content">
                     <p>{content}</p>
                     <div className="expertMobile-answer-tag">
@@ -71,5 +71,5 @@ class Wait extends React.Component {
     }
 }
 
-export default Wait
+module.exports = Wait;
 
